@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TravelSnap - Discover Your Next Adventure</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Material Symbols -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Configuration -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#259df4",
+              accent: "#ff9f1c", // Added slight orange accent
+              "background-light": "#f5f7f8",
+              "background-dark": "#101a22",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              "2xl": "1rem",
+              "3xl": "1.5rem",
+              full: "9999px",
+            },
+            backgroundImage: {
+              "hero-gradient":
+                "linear-gradient(180deg, rgba(16, 26, 34, 0.4) 0%, rgba(16, 26, 34, 0.2) 50%, rgba(16, 26, 34, 0.8) 100%)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .text-shadow-sm {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body
+    class="font-display antialiased text-gray-900 bg-background-light dark:bg-background-dark overflow-x-hidden"
+  >
+    <div class="relative min-h-screen w-full flex flex-col">
+      <!-- Background Image with Overlay -->
+      <div class="absolute inset-0 z-0">
+        <img
+          class="w-full h-full object-cover"
+          data-alt="Majestic mountain landscape with snowy peaks and mist"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzO-ekQIdMYQliJzGky44j0sGX9IWGlRCsGZuTKwvJmJmrcS3wy85bSWm5xpOUeYrgicyIqefvcmD0cX03qiMkuZF_GkAPgRJApKdmhZfCxAFgwDKvaC_o-hguSFVOvOvQyOjh_a79AOkzNuqhaWUU0iFL6Ox4AYUxdE3qYh3cutwCQyNs49a9t1td6aRM0fPfijNUUf4DGt6GpLU98kpLnMLmTIjjupKmHyrfoXgyrcF4hrdtTWx7nb0PIDOltIxy_uMJVQ5HJTlv"
+        />
+        <div class="absolute inset-0 bg-hero-gradient"></div>
+        <!-- Extra dark overlay for text contrast assurance -->
+        <div class="absolute inset-0 bg-black/20"></div>
+      </div>
+      <!-- Navigation Bar -->
+      <header class="relative z-50 w-full px-6 py-4 lg:px-12">
+        <div class="max-w-7xl mx-auto">
+          <nav
+            class="flex items-center justify-between glass-panel rounded-full px-6 py-3"
+          >
+            <!-- Logo -->
+            <div class="flex items-center gap-2">
+              <div
+                class="flex items-center justify-center size-8 bg-primary rounded-lg text-white"
+              >
+                <span class="material-symbols-outlined text-xl"
+                  >flight_takeoff</span
+                >
+              </div>
+              <h2 class="text-white text-lg font-bold tracking-tight">
+                TravelSnap
+              </h2>
+            </div>
+            <!-- Desktop Navigation Links -->
+            <div class="hidden md:flex items-center gap-8">
+              <a
+                class="text-white/90 hover:text-white text-sm font-medium transition-colors"
+                href="#"
+                >Destinations</a
+              >
+              <a
+                class="text-white/90 hover:text-white text-sm font-medium transition-colors flex items-center gap-1"
+                href="#"
+              >
+                Deals
+                <span
+                  class="size-2 rounded-full bg-accent inline-block ml-0.5"
+                ></span>
+              </a>
+              <a
+                class="text-white/90 hover:text-white text-sm font-medium transition-colors"
+                href="#"
+                >About</a
+              >
+              <a
+                class="text-white/90 hover:text-white text-sm font-medium transition-colors"
+                href="#"
+                >Blog</a
+              >
+            </div>
+            <!-- Auth Buttons -->
+            <div class="flex items-center gap-3">
+              <button
+                class="hidden sm:flex text-white hover:text-white/80 text-sm font-semibold px-3 py-2 transition-colors"
+              >
+                Log In
+              </button>
+              <button
+                class="flex items-center justify-center rounded-full h-10 px-5 bg-white text-background-dark hover:bg-gray-100 text-sm font-bold transition-all shadow-lg"
+              >
+                Sign Up
+              </button>
+              <!-- Mobile Menu Icon -->
+              <button class="md:hidden text-white flex items-center">
+                <span class="material-symbols-outlined">menu</span>
+              </button>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- Hero Content Section -->
+      <main
+        class="relative z-10 flex-1 flex flex-col justify-center items-center px-4 pt-10 pb-20 w-full"
+      >
+        <div class="max-w-5xl mx-auto flex flex-col items-center text-center">
+          <!-- Badge -->
+          <div
+            class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-md"
+          >
+            <span
+              class="flex items-center justify-center rounded-full bg-accent/90 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm"
+            >
+              New
+            </span>
+            <span class="text-sm font-medium text-white/90">
+              Explore our winter collection
+            </span>
+            <span class="material-symbols-outlined text-white/70 text-sm"
+              >arrow_forward</span
+            >
+          </div>
+          <!-- Headlines -->
+          <h1
+            class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.1] mb-6 drop-shadow-md"
+          >
+            Discover Your <br class="hidden sm:block" />
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white"
+              >Next Adventure</span
+            >
+          </h1>
+          <p
+            class="text-lg md:text-xl text-white/80 max-w-2xl font-medium leading-relaxed mb-10 drop-shadow-sm"
+          >
+            Find beautiful destinations and plan your perfect trip in minutes.
+            Join thousands of travelers creating memories with TravelSnap.
+          </p>
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-16">
+            <button
+              class="flex items-center justify-center gap-2 rounded-xl h-14 px-8 bg-primary hover:bg-sky-500 text-white text-base font-bold shadow-lg shadow-primary/30 transition-all hover:scale-[1.02] hover:-translate-y-0.5 ring-offset-2 focus:ring-2 ring-primary"
+            >
+              <span class="material-symbols-outlined">explore</span>
+              <span>Explore Destinations</span>
+            </button>
+            <button
+              class="group flex items-center justify-center gap-2 rounded-xl h-14 px-8 bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-md text-base font-bold transition-all hover:scale-[1.02]"
+            >
+              <span>Start Planning</span>
+              <span
+                class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
+                >arrow_right_alt</span
+              >
+            </button>
+          </div>
+          <!-- Visual Element: Phone Mockup -->
+          <div
+            class="relative w-full max-w-[320px] md:max-w-[360px] mx-auto perspective-1000 group"
+          >
+            <!-- Phone Frame -->
+            <div
+              class="relative rounded-[3rem] border-8 border-gray-900 bg-gray-900 shadow-2xl overflow-hidden aspect-[9/19] ring-1 ring-white/20 transform transition-transform duration-500 hover:scale-[1.01] hover:rotate-1"
+            >
+              <!-- Top Bar / Notch Area -->
+              <div
+                class="absolute top-0 inset-x-0 h-7 bg-transparent z-20 flex justify-center pt-2"
+              >
+                <div class="w-20 h-5 bg-black rounded-b-xl"></div>
+              </div>
+              <!-- Screen Content -->
+              <div
+                class="w-full h-full bg-background-light relative overflow-hidden flex flex-col"
+              >
+                <!-- App Header -->
+                <div
+                  class="px-5 pt-10 pb-4 flex items-center justify-between bg-white z-10 shadow-sm"
+                >
+                  <div class="flex flex-col">
+                    <span class="text-xs text-gray-500 font-semibold"
+                      >Good Morning,</span
+                    >
+                    <span class="text-lg font-bold text-gray-900">Alex</span>
+                  </div>
+                  <div
+                    class="size-9 bg-gray-100 rounded-full overflow-hidden border border-gray-200"
+                  >
+                    <img
+                      class="w-full h-full object-cover"
+                      data-alt="User profile avatar"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbt9wm2bsbnvfUITgbJiBJM3oLZlkqEU455CTMpuHhigD3doRdgQY4R0P9dyHLr1AUk9EqNweo-aR4rWwubah20boFMoyjQ-Ezivlv0v_EnGIWH6FUFQ-QEvSkuaMNmD74apIpQfHXYK-qWOflzLJFyjaThqki1CAwoWwGLKW_50TPjLNmKSWNUw5be4ai29TYdVxA_4h4KIKkDV6DwCx_NDcYonuV9H23BIsPwhvFFplZiV7eEcQJn8fxZpxKOgzX6ep4nG4F81uX"
+                    />
+                  </div>
+                </div>
+                <!-- App Body -->
+                <div class="flex-1 overflow-y-auto p-5 pb-20 no-scrollbar">
+                  <!-- Search -->
+                  <div class="relative mb-6">
+                    <div
+                      class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                    >
+                      <span class="material-symbols-outlined text-xl"
+                        >search</span
+                      >
+                    </div>
+                    <input
+                      class="w-full h-11 pl-10 pr-4 rounded-xl bg-gray-100 border-none text-sm font-medium focus:ring-2 focus:ring-primary/50 text-gray-800 placeholder-gray-400"
+                      placeholder="Where to next?"
+                      type="text"
+                    />
+                  </div>
+                  <!-- Section Title -->
+                  <div class="flex items-center justify-between mb-3">
+                    <h3 class="font-bold text-gray-900">Popular</h3>
+                    <span class="text-xs text-primary font-bold">See All</span>
+                  </div>
+                  <!-- Cards -->
+                  <div class="flex flex-col gap-4">
+                    <!-- Card 1 -->
+                    <div
+                      class="relative h-40 rounded-2xl overflow-hidden group/card shadow-sm"
+                    >
+                      <img
+                        class="w-full h-full object-cover"
+                        data-alt="Mountain lake scenery"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC_qUtPTIC_rVjvnbbylfLxNqhexUaKRDDNlg0uNSImLDRkbZQDX-NwtvUy82tzuY8l0CQnx1CVJTxBAvoHxM4aQV5XNkKuTZicnqKpClfi8B-km3b4gfUuWTOmkzKV0iEH8G6Da2GI94uggt4W_x3ffRz9H4Q4YmCUmvLxi9VfEMqJJN8X6Xj_9_izTTouU7Y6s2OHk7Vo3Xw-RDywjCHvuWJcJpTjwqoiQobo34ux9Gkgx-fI-NsquwzEM9tY4-XinWvvoJvEujj"
+                      />
+                      <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"
+                      ></div>
+                      <div class="absolute bottom-3 left-3 text-white">
+                        <p class="text-sm font-bold">Swiss Alps</p>
+                        <div
+                          class="flex items-center gap-1 text-[10px] opacity-90"
+                        >
+                          <span
+                            class="material-symbols-outlined text-[10px] text-accent"
+                            >star</span
+                          >
+                          4.9 (1.2k)
+                        </div>
+                      </div>
+                      <div
+                        class="absolute top-3 right-3 bg-white/90 backdrop-blur rounded-full px-2 py-0.5 text-[10px] font-bold text-gray-800 shadow-sm"
+                      >
+                        $450
+                      </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div
+                      class="relative h-40 rounded-2xl overflow-hidden group/card shadow-sm"
+                    >
+                      <img
+                        class="w-full h-full object-cover"
+                        data-alt="Tropical beach at sunset"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYnLnfaBBATuyt6YzUcIFYfq2cMdtSIbKFX6gOQP8xRugMul0X22c2mv5sG4GDrhiTcuEXhJ8F6iUo7z2x3C65ur_RQSojCk84hkthdfWu27PMClcfMJ7ZFXvCWiOXEgo5GJMbxwkoXMtT09ehXozpMo_dbFGVTXxxQxFPnQ2vTtRSCT9kYLhJf_3K103fkBmePo4ORMZwmvAf2x48bcND71sPr6mt2rqkABzVUB1eyJwNeTAJ_3PJR-hJ7TjU0WkofUltlswV7JUp"
+                      />
+                      <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"
+                      ></div>
+                      <div class="absolute bottom-3 left-3 text-white">
+                        <p class="text-sm font-bold">Maldives</p>
+                        <div
+                          class="flex items-center gap-1 text-[10px] opacity-90"
+                        >
+                          <span
+                            class="material-symbols-outlined text-[10px] text-accent"
+                            >star</span
+                          >
+                          5.0 (850)
+                        </div>
+                      </div>
+                      <div
+                        class="absolute top-3 right-3 bg-white/90 backdrop-blur rounded-full px-2 py-0.5 text-[10px] font-bold text-gray-800 shadow-sm"
+                      >
+                        $890
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- App Bottom Nav -->
+                <div
+                  class="absolute bottom-0 inset-x-0 h-16 bg-white border-t border-gray-100 flex items-center justify-around px-2 z-10"
+                >
+                  <button
+                    class="p-2 flex flex-col items-center gap-1 text-primary"
+                  >
+                    <span class="material-symbols-outlined text-2xl fill-1"
+                      >home</span
+                    >
+                  </button>
+                  <button
+                    class="p-2 flex flex-col items-center gap-1 text-gray-400 hover:text-gray-600"
+                  >
+                    <span class="material-symbols-outlined text-2xl"
+                      >favorite</span
+                    >
+                  </button>
+                  <div class="relative -top-5">
+                    <button
+                      class="size-12 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-primary/40 hover:scale-105 transition-transform"
+                    >
+                      <span class="material-symbols-outlined text-2xl"
+                        >add</span
+                      >
+                    </button>
+                  </div>
+                  <button
+                    class="p-2 flex flex-col items-center gap-1 text-gray-400 hover:text-gray-600"
+                  >
+                    <span class="material-symbols-outlined text-2xl"
+                      >chat_bubble</span
+                    >
+                  </button>
+                  <button
+                    class="p-2 flex flex-col items-center gap-1 text-gray-400 hover:text-gray-600"
+                  >
+                    <span class="material-symbols-outlined text-2xl"
+                      >person</span
+                    >
+                  </button>
+                </div>
+                <!-- Home Indicator -->
+                <div
+                  class="absolute bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-gray-300 rounded-full z-20"
+                ></div>
+              </div>
+            </div>
+            <!-- Floating Badge on Mockup -->
+            <div
+              class="absolute -right-8 top-20 bg-white p-3 rounded-2xl shadow-xl animate-bounce duration-[3000ms] hidden md:block"
+            >
+              <div class="flex items-center gap-3">
+                <div class="bg-green-100 p-2 rounded-full text-green-600">
+                  <span class="material-symbols-outlined">check_circle</span>
+                </div>
+                <div>
+                  <p class="text-xs text-gray-500 font-semibold">
+                    Booking Confirmed
+                  </p>
+                  <p class="text-sm font-bold text-gray-900">
+                    Flight to Zurich
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Floating Badge on Mockup 2 -->
+            <div
+              class="absolute -left-12 bottom-32 bg-white p-3 rounded-2xl shadow-xl hidden md:block backdrop-blur-sm bg-white/90"
+            >
+              <div class="flex items-center gap-2">
+                <div class="flex -space-x-2 overflow-hidden">
+                  <img
+                    alt=""
+                    class="inline-block h-6 w-6 rounded-full ring-2 ring-white"
+                    data-alt="User avatar small"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3x-jj-KQro_mFLDrP_SOJoR9iX_LYnrbk9hjnHnVDwKfGCRrdydE2SCqofz11a7llGnFN2Bdhe1-Ulg3-N8a3JBTP79O6lhx5EvkvZ9wJ9UmzUBPlxOyvuOdhpYUXiWg7X93bdiFvp_KLjQu9vqaJUyMKLygwR0F-LhdALlv82PI2YoYNewhT35amAxd2hxyPTpyf60YRAnerrZEHndJWpQaZ00ZwH73FnSE59_zE20OAkMXTQ3Wj4_itb_xrF_Kq-RQzvAA3R_hq"
+                  />
+                  <img
+                    alt=""
+                    class="inline-block h-6 w-6 rounded-full ring-2 ring-white"
+                    data-alt="User avatar small"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5UyNrWiKikGckzIwpn7s-Zhlf1jyTzMl94HB_lM1dP4x8rDrYpGCg0Zx1ygYhwetV0LjR5oVjZ5HjomEI68_tQBomqzBZWoscdtzbqb4DgZjGSstT28pRzSr9BoHPAMum6fPtRsvfvYmXP-Ypw4wqTIAOnMmu55Qw2FKiLwuBr7PaCGvAsozSPf8EmdbU7FiztAFpXV5wSJ7eMPkvVdv9NcVbiFHYljhoHEQd0XVB5U40cokPK2ML8at23WzTCrrddUeUcUILpes3"
+                  />
+                  <img
+                    alt=""
+                    class="inline-block h-6 w-6 rounded-full ring-2 ring-white"
+                    data-alt="User avatar small"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6dseidnvOGOP1WTiQvWWKDP0VsELDCXX74NIzFvQt44NoIJb6XsprPBrSSkJPu28NCspbsWWhqG_0rTQD3pVwtbqTtRpqjxsBn5xarsGOdRV1T8zitusoBLGHFHoQ5XofGP-RJCGc_TlklKXfzXa1kkg06BGYU5LIoFoK4Wx1y3w3qucxL8WLyPr7IXXsA4v_1Kd6XXDaHhCttkp_FZkJf48wpydWAL8f2utBO1RHWbKKJE0-0KOCFwU70bNONYc4N-b4NMoLVhac"
+                  />
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-gray-900">200+ Guides</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

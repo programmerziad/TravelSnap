@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TravelSnap - Discover Your Next Adventure</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&amp;family=Noto+Sans:wght@400..700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Material Symbols -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS with Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Configuration -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4299f0",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+              accent: "#f97316", // Slight orange accent
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+              body: ["Noto Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              "2xl": "1rem",
+              full: "9999px",
+            },
+            backgroundImage: {
+              "hero-pattern":
+                "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop')",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      .glass-nav {
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+    </style>
+  </head>
+  <body
+    class="font-display antialiased text-[#111418] bg-background-light dark:bg-background-dark overflow-x-hidden"
+  >
+    <!-- Main Container -->
+    <div class="relative w-full min-h-screen flex flex-col">
+      <!-- Background Image & Overlay -->
+      <div class="absolute inset-0 z-0">
+        <div
+          class="w-full h-full bg-cover bg-center bg-no-repeat"
+          data-alt="Scenic tropical beach with turquoise water and palm trees during sunset"
+          style="
+            background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAz1bWMQf6ysuZ_ZPomtClo94SUx000DiHtaspOylMx-ZzQV3ElDKweNvDXPhkvryknsXgpz9T1a8ud68ZUwP3A-qtXTMzDOJLxQIPZacpZcDSKzMaGvOV0tNf2M4UIMSC2DQ54O4xRlPH1C9DXRgrMSLN1cfaFS8IaRM4L6Oo4mpxDUQJaXW-iiKHBgejVLBT7s08ZpoLSfQ8N0a3g1YiuvoyL7W2PzPQ9SrE6kcdPGFGuqezTB4TNzTIir8sgAZpU9wCOwjDecjkG');
+          "
+        ></div>
+        <!-- Gradient Overlay for readability -->
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"
+        ></div>
+      </div>
+      <!-- Navigation Bar -->
+      <header class="relative z-50 w-full glass-nav border-b border-white/10">
+        <div
+          class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 py-4 flex items-center justify-between"
+        >
+          <!-- Logo -->
+          <div class="flex items-center gap-3">
+            <div
+              class="size-10 rounded-full bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/30"
+            >
+              <span class="material-symbols-outlined text-2xl"
+                >travel_explore</span
+              >
+            </div>
+            <span class="text-white text-xl font-bold tracking-tight"
+              >TravelSnap</span
+            >
+          </div>
+          <!-- Desktop Nav Links -->
+          <nav class="hidden md:flex items-center gap-8">
+            <a
+              class="text-white/90 hover:text-white hover:text-shadow transition-all text-sm font-medium"
+              href="#"
+              >Destinations</a
+            >
+            <a
+              class="text-white/90 hover:text-white hover:text-shadow transition-all text-sm font-medium"
+              href="#"
+              >Planning</a
+            >
+            <a
+              class="text-white/90 hover:text-white hover:text-shadow transition-all text-sm font-medium"
+              href="#"
+              >Blog</a
+            >
+            <a
+              class="text-white/90 hover:text-white hover:text-shadow transition-all text-sm font-medium"
+              href="#"
+              >About</a
+            >
+          </nav>
+          <!-- Actions -->
+          <div class="flex items-center gap-3">
+            <button
+              class="hidden sm:flex text-white hover:bg-white/10 px-4 py-2 rounded-lg text-sm font-bold transition-colors"
+            >
+              Login
+            </button>
+            <button
+              class="flex items-center justify-center rounded-lg h-10 px-5 bg-white text-background-dark hover:bg-gray-100 transition-colors text-sm font-bold shadow-lg"
+            >
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </header>
+      <!-- Hero Content Section -->
+      <main
+        class="relative z-10 flex-1 flex flex-col justify-center w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 py-12 lg:py-0"
+      >
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <!-- Left Column: Text Content -->
+          <div class="flex flex-col gap-6 max-w-2xl">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 w-fit backdrop-blur-sm"
+            >
+              <span
+                class="flex h-2 w-2 rounded-full bg-accent animate-pulse"
+              ></span>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-white"
+                >New Experiences Added</span
+              >
+            </div>
+            <h1
+              class="text-white text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight"
+            >
+              Discover Your <br />
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-sky-200"
+                >Next Adventure</span
+              >
+            </h1>
+            <p
+              class="text-lg sm:text-xl text-gray-200 font-light leading-relaxed max-w-lg"
+            >
+              Find beautiful destinations and plan your perfect trip in minutes.
+              Join thousands of happy travelers exploring the world today.
+            </p>
+            <div class="flex flex-wrap gap-4 mt-4">
+              <button
+                class="flex items-center justify-center rounded-xl h-14 px-8 bg-primary hover:bg-blue-500 text-white text-base font-bold transition-all shadow-lg shadow-primary/40 hover:scale-105 active:scale-95"
+              >
+                Explore Destinations
+              </button>
+              <button
+                class="flex items-center justify-center gap-2 rounded-xl h-14 px-8 bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-md text-white text-base font-bold transition-all hover:scale-105 active:scale-95"
+              >
+                <span class="material-symbols-outlined text-[20px]"
+                  >play_circle</span
+                >
+                Start Planning
+              </button>
+            </div>
+            <div class="flex items-center gap-4 mt-8">
+              <div class="flex -space-x-3">
+                <img
+                  class="w-10 h-10 rounded-full border-2 border-background-dark object-cover"
+                  data-alt="Portrait of a female traveler"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQqbrcqL3V5hYbjLpPrZrQLdTKj_buUttd8o0w_cR-Pm-OK45hl1-MQw0GAjX025I48l4Y1UQ6dsaaxNb5rbDZ29PBq8ZYhYyFWKFvGR_AV_7ouCehls4d6FDlgr5XQc3RrvKzDX9mLcVVJWrVAtR8aD6xlF2inF5Tv1sZJzZtwFjo8GdAulFmE8xHvwywAodcZa_Kal8Z7YRJbPJPpuzJWVGv8LyY23ETxO8Osvn-3k8Gm13bRlMqEGL1hA6zXx8_-JjsKDXowoYf"
+                />
+                <img
+                  class="w-10 h-10 rounded-full border-2 border-background-dark object-cover"
+                  data-alt="Portrait of a male traveler"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmziz-Fp3oMfaiA8l_h9obaL0rUraIvVpQoW7yohidnIZJWXAfM0VHYs6hsGvYEQm_hHEx-OB9647qyVtikdpjeu4AGQpwMeaClTr44_2XEB0mR_bK6YGowVr-zzrbYmdh4Eyr3bSxeWd1N1O1pN5pTOQFxd6GQ1gPywiV123m1HhEKuAeArk9uSgC3DPfnL1FYr35sEBgKnQaWlsDzPUiq9A5Vud7hr1dDN0dTo6xzmqX7bj7B5pvzdE1-Qcu2AtBg5izT1-fEIPp"
+                />
+                <img
+                  class="w-10 h-10 rounded-full border-2 border-background-dark object-cover"
+                  data-alt="Portrait of a male traveler"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY1calgnL2JUUk3tgDpqQ4Ng2yKZTvxIZh6Gw3bfdKQZMe5iAjOcB3bSjsJYBrB0-EPTl8LjGLueEC37ajYr6306gSM4H1Fbz0Fk53uX1Mqk-k1aun_cYPdfbDZYhUZ0b4dQ3BrOdIL-cR_e46VM4KGm0u7r7yFhApJAym-tG9pdktdbLkiYHGg3Ouj9jpzDmUbZ380hExcZypF159K03xMXP4t1iUswhkfwchmrSt2TQjC_BjPWShOejJyKbOkXVcoTG6lGYOdMQz"
+                />
+                <div
+                  class="w-10 h-10 rounded-full border-2 border-background-dark bg-white flex items-center justify-center text-xs font-bold text-background-dark"
+                >
+                  +2k
+                </div>
+              </div>
+              <div class="flex flex-col">
+                <div class="flex text-accent text-sm">
+                  <span
+                    class="material-symbols-outlined text-[16px] fill-current"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[16px] fill-current"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[16px] fill-current"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[16px] fill-current"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[16px] fill-current"
+                    >star</span
+                  >
+                </div>
+                <span class="text-white/80 text-sm"
+                  >Trusted by travelers worldwide</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Right Column: Floating Cards -->
+          <div class="relative hidden lg:block h-full min-h-[500px]">
+            <!-- Card 1: Santorini -->
+            <div
+              class="absolute top-10 right-10 z-20 w-[380px] glass-panel p-4 rounded-2xl shadow-2xl transform transition-transform hover:-translate-y-2 duration-300 animate-[float_6s_ease-in-out_infinite]"
+            >
+              <div class="flex gap-4">
+                <div
+                  class="w-24 h-24 rounded-lg bg-cover bg-center shrink-0"
+                  data-alt="Beautiful white architecture of Santorini Greece overlooking the sea"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbnG__pItvYpn3ptDcln_gPnukq4JFy5Rkm6-H8HRcGb2l0ULapy4lFPCr3Qhgpm1F3OvH2RnEyaholIjobd8VajtgbrExAUs4V5BNusVvdlK_WhNft2CBlXeRsNEvq--aCa62SE3HjPcOFrbdy1vkLmihhbWk3O4yHO1TUKPaqJK6pw3jjnjiIDMC_ejVk0bHdAxu03E_KDnM9fRDhv95pfUBvrp398_nmkoHTjPuBXcwUwVhUq3nXjdIcpDbQwgzJ9tM4lzRpEeQ');
+                  "
+                ></div>
+                <div class="flex flex-col justify-between flex-1 py-1">
+                  <div>
+                    <div class="flex justify-between items-start">
+                      <h3
+                        class="text-[#111418] font-bold text-lg leading-tight"
+                      >
+                        Santorini, Greece
+                      </h3>
+                      <span
+                        class="bg-accent/10 text-accent text-xs font-bold px-2 py-1 rounded-full"
+                        >Hot</span
+                      >
+                    </div>
+                    <div class="flex items-center gap-1 mt-1">
+                      <span
+                        class="material-symbols-outlined text-accent text-sm fill-current"
+                        >star</span
+                      >
+                      <span class="text-[#617589] text-sm font-medium"
+                        >4.9 (1.2k reviews)</span
+                      >
+                    </div>
+                  </div>
+                  <div class="flex justify-between items-end">
+                    <p class="text-[#111418] text-sm font-bold">fr. $850</p>
+                    <button
+                      class="size-8 rounded-full bg-background-light flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+                    >
+                      <span class="material-symbols-outlined text-lg"
+                        >arrow_forward</span
+                      >
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card 2: Maldives -->
+            <div
+              class="absolute top-48 right-32 z-10 w-[380px] bg-white p-4 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] transform transition-transform hover:-translate-y-2 duration-300 animate-[float_7s_ease-in-out_1s_infinite]"
+            >
+              <div class="flex gap-4">
+                <div
+                  class="w-24 h-24 rounded-lg bg-cover bg-center shrink-0"
+                  data-alt="Overwater bungalows in the Maldives with crystal clear water"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJZTliglJ7Jyvfld3V6UM8cU1sczLgNbo-68ytbGWjkIuEoTd9E1SVCuN7ZgTSJxBKQ2h7xzzkQ0xw2TG_f1nOhYixK5oKcawu0czfXH1tYrQh8qNI7t4kiX1iqo_4q300X85QQ4I5n_z-iGtVzbsXA5I4fxkpB59X3Ql7mEDFCP5nFv-XMQKIYYsxpePXPPcUwE8vVi3UkRBHPdCEVgAjAO_UhincfABw_DxoihQc46xYHYR3M1Uiu97e6bltbYzeYNF-keyBDYZv');
+                  "
+                ></div>
+                <div class="flex flex-col justify-between flex-1 py-1">
+                  <div>
+                    <div class="flex justify-between items-start">
+                      <h3
+                        class="text-[#111418] font-bold text-lg leading-tight"
+                      >
+                        Malé, Maldives
+                      </h3>
+                    </div>
+                    <div class="flex items-center gap-1 mt-1">
+                      <span
+                        class="material-symbols-outlined text-accent text-sm fill-current"
+                        >star</span
+                      >
+                      <span class="text-[#617589] text-sm font-medium"
+                        >5.0 (850 reviews)</span
+                      >
+                    </div>
+                  </div>
+                  <div class="flex justify-between items-end">
+                    <p class="text-[#111418] text-sm font-bold">fr. $1200</p>
+                    <button
+                      class="size-8 rounded-full bg-background-light flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+                    >
+                      <span class="material-symbols-outlined text-lg"
+                        >arrow_forward</span
+                      >
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Decorative Map Pin -->
+            <div
+              class="absolute top-20 right-[420px] animate-bounce z-0 opacity-80"
+            >
+              <div class="relative">
+                <span
+                  class="material-symbols-outlined text-5xl text-white drop-shadow-lg"
+                  >location_on</span
+                >
+                <div
+                  class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-3 bg-black/40 blur-sm rounded-full"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <style>
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+    </style>
+  </body>
+</html>
