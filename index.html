@@ -26,9 +26,7 @@
         <div
           class="w-full h-full bg-cover bg-center bg-no-repeat"
           data-alt="Scenic tropical beach with turquoise water and palm trees during sunset"
-          style="
-            background-image: url(images/mainBg.png);
-          "
+          style="background-image: url(images/mainBg.png)"
         ></div>
         <!-- Gradient Overlay for readability -->
         <div
@@ -181,46 +179,33 @@
             </div>
           </div>
           <!-- Right Column: Floating Cards -->
-          <div class="relative hidden lg:block h-full min-h-[500px]">
+          <div class="right-c">
             <!-- Card 1: Santorini -->
-            <div
-              class="absolute top-10 right-10 z-20 w-[380px] glass-panel p-4 rounded-2xl shadow-2xl transform transition-transform hover:-translate-y-2 duration-300 animate-[float_6s_ease-in-out_infinite]"
-            >
-              <div class="flex gap-4">
+            <div class="card card-1 glass float-1">
+              <div class="card-content">
                 <div
-                  class="w-24 h-24 rounded-lg bg-cover bg-center shrink-0"
-                  data-alt="Beautiful white architecture of Santorini Greece overlooking the sea"
+                  class="card-img"
                   style="background-image: url(images/bg1.png)"
+                  data-alt="Beautiful white architecture of Santorini Greece overlooking the sea"
                 ></div>
-                <div class="flex flex-col justify-between flex-1 py-1">
+
+                <div class="card-info">
                   <div>
-                    <div class="flex justify-between items-start">
-                      <h3
-                        class="text-[#111418] font-bold text-lg leading-tight"
-                      >
-                        Santorini, Greece
-                      </h3>
-                      <span
-                        class="bg-accent/10 text-accent text-xs font-bold px-2 py-1 rounded-full"
-                        >Hot</span
-                      >
+                    <div class="card-header">
+                      <h3>Santorini, Greece</h3>
+                      <span class="badge">Hot</span>
                     </div>
-                    <div class="flex items-center gap-1 mt-1">
-                      <span
-                        class="material-symbols-outlined text-accent text-sm fill-current"
-                        >star</span
-                      >
-                      <span class="text-[#617589] text-sm font-medium"
-                        >4.9 (1.2k reviews)</span
-                      >
+
+                    <div class="rating">
+                      <span class="material-symbols-outlined">star</span>
+                      <span>4.9 (1.2k reviews)</span>
                     </div>
                   </div>
-                  <div class="flex justify-between items-end">
-                    <p class="text-[#111418] text-sm font-bold">fr. $850</p>
-                    <button
-                      class="size-8 rounded-full bg-background-light flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
-                    >
-                      <span class="material-symbols-outlined text-lg"
+
+                  <div class="card-footer">
+                    <p>fr. $850</p>
+                    <button class="arrow-btn">
+                      <span class="material-symbols-outlined"
                         >arrow_forward</span
                       >
                     </button>
@@ -228,41 +213,29 @@
                 </div>
               </div>
             </div>
+
             <!-- Card 2: Maldives -->
-            <div
-              class="absolute top-48 right-32 z-10 w-[380px] bg-white p-4 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] transform transition-transform hover:-translate-y-2 duration-300 animate-[float_7s_ease-in-out_1s_infinite]"
-            >
-              <div class="flex gap-4">
+            <div class="card card-2 float-2">
+              <div class="card-content">
                 <div
-                  class="w-24 h-24 rounded-lg bg-cover bg-center shrink-0"
-                  data-alt="Overwater bungalows in the Maldives with crystal clear water"
+                  class="card-img"
                   style="background-image: url(images/bg2.png)"
+                  data-alt="Overwater bungalows in the Maldives with crystal clear water"
                 ></div>
-                <div class="flex flex-col justify-between flex-1 py-1">
+
+                <div class="card-info">
                   <div>
-                    <div class="flex justify-between items-start">
-                      <h3
-                        class="text-[#111418] font-bold text-lg leading-tight"
-                      >
-                        Malé, Maldives
-                      </h3>
-                    </div>
-                    <div class="flex items-center gap-1 mt-1">
-                      <span
-                        class="material-symbols-outlined text-accent text-sm fill-current"
-                        >star</span
-                      >
-                      <span class="text-[#617589] text-sm font-medium"
-                        >5.0 (850 reviews)</span
-                      >
+                    <h3>Malé, Maldives</h3>
+                    <div class="rating">
+                      <span class="material-symbols-outlined">star</span>
+                      <span>5.0 (850 reviews)</span>
                     </div>
                   </div>
-                  <div class="flex justify-between items-end">
-                    <p class="text-[#111418] text-sm font-bold">fr. $1200</p>
-                    <button
-                      class="size-8 rounded-full bg-background-light flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
-                    >
-                      <span class="material-symbols-outlined text-lg"
+
+                  <div class="card-footer">
+                    <p>fr. $1200</p>
+                    <button class="arrow-btn">
+                      <span class="material-symbols-outlined"
                         >arrow_forward</span
                       >
                     </button>
@@ -270,19 +243,11 @@
                 </div>
               </div>
             </div>
-            <!-- Decorative Map Pin -->
-            <div
-              class="absolute top-20 right-[420px] animate-bounce z-0 opacity-80"
-            >
-              <div class="relative">
-                <span
-                  class="material-symbols-outlined text-5xl text-white drop-shadow-lg"
-                  >location_on</span
-                >
-                <div
-                  class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-3 bg-black/40 blur-sm rounded-full"
-                ></div>
-              </div>
+
+            <!-- Map Pin -->
+            <div class="map-pin">
+              <span class="material-symbols-outlined">location_on</span>
+              <div class="pin-shadow"></div>
             </div>
           </div>
         </div>
