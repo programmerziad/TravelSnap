@@ -1,3 +1,10 @@
+:root {
+    --primary: #4299f0;
+    --accent: #f97316;
+    --dark: #101922;
+    --light: #f6f7f8;
+    --glass: rgba(255,255,255,0.15);
+}
 * {
     margin: 0;
     padding: 0;
